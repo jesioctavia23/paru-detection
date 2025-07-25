@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hasil Prediksi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-back {
+      margin-top: 25px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      text-decoration: none;
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📊 Hasil Deteksi Suara Batuk</h2>
+    <p><strong>Hasil Prediksi:</strong> {{ prediction }}</p>
+    <p><strong>Waktu Proses:</strong> {{ elapsed_time | round(2) }} ms</p>
+
+    <h5 class="mt-4">Gelombang Suara</h5>
+    <img src="{{ waveform_img }}" alt="Visual Gelombang Suara">
+
+    <h5 class="mt-4">MFCC (Mel-Frequency Cepstral Coefficients)</h5>
+    <img src="{{ mfcc_img }}" alt="Visual MFCC">
+
+    <a href="/" class="btn-back mt-4">🔄 Deteksi Ulang</a>
+  </div>
+</body>
+</html>
