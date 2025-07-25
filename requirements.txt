@@ -1,7 +1,7 @@
-flask
-librosa
-numpy
-soundfile
-scikit-learn
-matplotlib
-werkzeug
+Flask==3.1.1
+librosa==0.11.0
+numpy==2.2.6
+soundfile==0.13.1
+scikit-learn==1.7.1
+matplotlib==3.10.3
+gunicorn
