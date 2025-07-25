@@ -68,7 +68,7 @@ def predict():
             y = np.array(y, dtype=np.float32)
         except:
             try:
-                y, sr = librosa.load(filepath, sr=22050, duration=3.0)
+             y, sr = librosa.load(filepath, sr=22050, duration=1.5, res_type='kaiser_fast')
             except Exception:
                 return render_template("upload.html", error="File audio tidak valid.")
 
